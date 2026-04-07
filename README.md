@@ -1,7 +1,10 @@
-# component-gen
+# Component-gen
+Generate astro files with gun cli
+
+# prerequisites
+install [charm gum](https://github.com/charmbracelet/gum)
 
 ## How to use
-
 ### Executable: 
 use chmod to execute the file
 ```sh
