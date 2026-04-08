@@ -18,6 +18,5 @@ chmod +x commit.sh
 create an alias to execute the file anyware
 ```sh title:config.fish
 # Fish example
-alias commit = "sh path/to/file/commit.sh"
-
+alias commit = "bash path/to/file/commit.sh"
 ```

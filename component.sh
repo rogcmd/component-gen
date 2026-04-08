@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo ""
 gum style \
@@ -11,10 +11,10 @@ gum style \
 echo ""
 
 CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-escolha=$(gum choose "astro component" "reset.css" --header "What do you want to do?")
+escolha=$(gum choose "astro component" "reset.css" --header "What you wanna create ?")
 case $escolha in
     "astro component")
-      ComponentName=$(gum input --header "what component u wanna make?")
+      ComponentName=$(gum input --header "what component u wanna make?" --placeholder "button")
       Component="${ComponentName^}.astro"
         
       if gum confirm "generate $Component ?"; then
@@ -26,8 +26,10 @@ case $escolha in
       if [ -f "./src/components/$Component" ]; then
       gum style \
       --foreground "#94e2d5" \
-      "file created at src/componente"
+      "file created at src/components"
+      tree . -P "$Component" -L 3--prune
       else 
+        clear
         gum style \
         --foreground "#f38ba8" \
         "failed to create file"
@@ -43,6 +45,7 @@ case $escolha in
       gum style \
       --foreground "#94e2d5" \
       "file created at src/styles"
+      tree . -P 'reset.css' -L 3 --prune
       else 
         gum style \
         --foreground "#f38ba8" \
